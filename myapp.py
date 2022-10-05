@@ -66,14 +66,12 @@ def activeness(date):
 
 @app.route("/sensors/env", methods=["GET"])
 def env():
-    # findTemp = db.mycollection().sort(env)
     findTemp = db.env.find().sort("timestamp", -1).limit(1)[0]
     del findTemp["_id"]
     return findTemp
 
 @app.route("/sensors/pose", methods=["GET"])
 def pose():
-    # findPose = db.mycollection().sort(pose)
     findPose = db.pose.find().sort("timestamp", -1).limit(1)[0]
     del findPose["_id"]
     return findPose
