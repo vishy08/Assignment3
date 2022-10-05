@@ -82,13 +82,13 @@ def pose():
 def postEnv():
     x = request.get_json()
     add = db.env.insert_one(x)
-    return "complete"
+    return "finished"
 
 @app.route("/post/pose", methods=["POST"])
 def postPose():
     x = request.get_json()
     add = db.pose.insert_one(x)
-    return "complete"
+    return "finished"
 
 if __name__ == '__main__':
     app.run(debug=True) 
