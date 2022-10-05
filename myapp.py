@@ -80,14 +80,14 @@ def pose():
 
 @app.route("/post/env", methods=["POST"])
 def postEnv():
-    x = request.get_json()
-    add = db.env.insert_one(x)
+    collectionData = request.get_json()
+    add = db.env.insert_one(collectionData)
     return "finished"
 
 @app.route("/post/pose", methods=["POST"])
 def postPose():
-    x = request.get_json()
-    add = db.pose.insert_one(x)
+    collectionData = request.get_json()
+    add = db.pose.insert_one(collectionData)
     return "finished"
 
 if __name__ == '__main__':
