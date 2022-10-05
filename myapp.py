@@ -3,7 +3,7 @@ import requests, json
 from datetime import datetime
 import certifi
 from pymongo import MongoClient
-client = MongoClient("mongodb+srv://vishy08:Avador25@cluster0.sph8g3m.mongodb.net/?retryWrites=true&w=majority", tlsCAFile = certifi.where())
+client = MongoClient("mongodb+srv://vishy08:Avador25@cluster0.sgqoke3.mongodb.net/test", tlsCAFile = certifi.where())
 db = client["mydb"]
 
 app = Flask(__name__)
