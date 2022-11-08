@@ -41,7 +41,7 @@ def steps():
     ret = {'step-count': steps, 'distance': distance, 'time': offset} 
     return jsonify(ret)              
 
-@app.route('/sleep/<date>', methods=["GET"])
+@app.route("/sleep/<date>", methods=["GET"])
 def sleep(date):
     myheader = {"Authorization":"Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMzhSNkIiLCJzdWIiOiJCNEYzNVEiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyc29jIHJzZXQgcm94eSBybnV0IHJwcm8gcnNsZSByYWN0IHJsb2MgcnJlcyByd2VpIHJociBydGVtIiwiZXhwIjoxNjkyMjk1NDQ0LCJpYXQiOjE2NjA3NTk0NDR9.bILcGIrPRXPWRrWBZDKRLsZdtTKKqPUpZ4NZZ-U3k5g"}
     myurl = "https://api.fitbit.com/1.2/user/-/sleep/date/{}.json".format(date)
