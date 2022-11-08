@@ -44,7 +44,7 @@ def steps():
 @app.route('/sleep/<date>', methods=["GET"])
 def sleep(date):
     myheader = {"Authorization":"Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMzhSNkIiLCJzdWIiOiJCNEYzNVEiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyc29jIHJzZXQgcm94eSBybnV0IHJwcm8gcnNsZSByYWN0IHJsb2MgcnJlcyByd2VpIHJociBydGVtIiwiZXhwIjoxNjkyMjk1NDQ0LCJpYXQiOjE2NjA3NTk0NDR9.bILcGIrPRXPWRrWBZDKRLsZdtTKKqPUpZ4NZZ-U3k5g"}
-    myurl = "https://api.fitbit.com/1.2/user/-/sleep/date/2022-09-14.json"
+    myurl = "https://api.fitbit.com/1.2/user/-/sleep/date/{}.json".format(date)
     resp = requests.get(myurl, headers=myheader).json()
     deep = resp["summary"]["stages"]["deep"]
     light = resp["summary"]["stages"]["light"]
@@ -56,7 +56,7 @@ def sleep(date):
 @app.route("/activeness/<date>", methods=["GET"])
 def activeness(date):
     myheader = {"Authorization":"Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMzhSNkIiLCJzdWIiOiJCNEYzNVEiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyc29jIHJzZXQgcm94eSBybnV0IHJwcm8gcnNsZSByYWN0IHJsb2MgcnJlcyByd2VpIHJociBydGVtIiwiZXhwIjoxNjkyMjk1NDQ0LCJpYXQiOjE2NjA3NTk0NDR9.bILcGIrPRXPWRrWBZDKRLsZdtTKKqPUpZ4NZZ-U3k5g"}
-    myurl = "https://api.fitbit.com/1/user/-/activities/date/2022-09-14.json"
+    myurl = "https://api.fitbit.com/1/user/-/activities/date/{}.json".format(date)
     resp = requests.get(myurl, headers=myheader).json()
     sedMins = resp["summary"]["sedentaryMinutes"]
     veryActive = resp["summary"]["veryActiveMinutes"]
